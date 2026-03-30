@@ -25,7 +25,7 @@ export async function register(userData) {
         body: JSON.stringify(userData),
     })
     const data = await response.json();
-    return data();
+    return data;
 }
 //register notes: 
 // We are fetching the register users and using the post method to send data in this function.
@@ -42,7 +42,7 @@ export async function login(credentials) {
         body: JSON.stringify(credentials),
     })
     const data = await response.json();
-    return data();
+    return data;
 }
 
 //login notes:
@@ -70,7 +70,7 @@ export async function reserveBook(bookId, token) {
             "Content-Type" : "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify(bookId),
+        body: JSON.stringify({bookId}),
     });
     const data = await response.json()
     return data;
@@ -89,8 +89,7 @@ export async function returnBook(id, token){
             Authorization: `Bearer ${token}`,
         },
     });
-    const data = await response.json();
-    return data;
+    return response;
 }
 
 //returnbook:
