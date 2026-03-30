@@ -25,8 +25,9 @@ export default function BookDetail(){
     if(!book) return <div>Your book is loading...</div>
 
     return (
-        <div>
+        <div className="book-detail-container">
             <img src={book.coverimage} alt={book.title}/>
+            <div className="book-detail-info">
             <h1>{book.title}</h1>
             <p>{book.author}</p>
             <p>{book.description}</p>
@@ -38,6 +39,7 @@ export default function BookDetail(){
             ) : (
                 <button disabled>Already Reserved</button>
             )}
+            </div>
         </div>
     )
 }

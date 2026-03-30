@@ -2,7 +2,6 @@ import {Link, useNavigate} from "react-router-dom";
 import {useAuth} from "../context/AuthContext";
 
 export default function NavBar() {
-    console.log("NavBar is rendering")
     const {token, logout} = useAuth();
     const navigate = useNavigate();
 
@@ -14,6 +13,7 @@ export default function NavBar() {
 
 return (
     <nav>
+        <div>
         <Link to="/books">Story-Rift</Link>
         { token ? (
             <>
@@ -26,6 +26,7 @@ return (
             <Link to="/register">Register</Link>
             </>
         )}
+        </div>
     </nav>
 );
 }
