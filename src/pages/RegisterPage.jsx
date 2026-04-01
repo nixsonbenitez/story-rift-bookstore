@@ -25,11 +25,11 @@ export default function RegisterPage(){
     //handlesubmit neeeds to be here to act on the form submision and to send the register data to our API
 
     return(
-        <div>
+        <div className="form-container">
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
             <input type="text" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
-            <input type="text" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
+            <input type="text"  placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
             <input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button type="submit">Register</button>

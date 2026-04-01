@@ -58,7 +58,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
+    background-color: #6b3f2a;
     color: white;
     border-bottom: 1px solid #ddd;
 }
@@ -67,28 +67,54 @@ nav > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
-    margin: 0 auto; 
+    margin: auto; 
     padding: 15px 20px;
 }
 
 nav a{
     text-decoration: none;
-    color: #2a6db5;
-    font-size: 0.95;
+    color: #ffffff;
+    font-size: 1.4rem;
+    border: 2px solid transparent; /*without this, it would keep the navbar jumping everytime I hover. */
+    border-radius: 22px;
+    padding: 6px;
+    cursor: pointer;
     margin-left: 16px;
 }
 
-nav button {
-  background: none;
-  border: none;
-  color: #2a6db5;
-  font-size: 0.95rem;
-  cursor: pointer;
+nav a:hover{
+    color:#ffffff;
+    border: 2px solid white;
+    border-radius: 22px;
+    padding: 6px;
+}
+nav button{
+    text-decoration: none;
+    background-color: #6b3f2a;
+    color: #ffffff;
+    font-size: 1.4rem;
+    border: 2px solid transparent; /*without this, it would keep the navbar jumping everytime I hover. */
+    border-radius: 22px;
+    padding: 6px;
+    cursor: pointer;
+    margin-left: 16px;
+}
+
+nav button:hover{
+    color:#ffffff;
+    border: 2px solid white;
+    border-radius: 22px;
+    padding: 6px;
 }
 
 /*This takes care of the search bar and the search results.*/
+.nav-search-wrapper {
+    position: relative;
+    width: 300px;
+}
+
 .search-wrapper{
     position: relative;
     margin-bottom: 24px;
@@ -99,14 +125,11 @@ nav button {
     padding: 10px 16px;
     font-size: 1rem;
     border: 1px solid #888888;
-    border-radius: 999px;
+    border-radius: 22px;
     outline: none;
     background: white;
 }
 
-.search-input:focus{
-    border-color: #2a6db5;
-}
 
 .search-dropdown{
     position: absolute;
@@ -135,7 +158,7 @@ nav button {
     border-bottom: none;
 }
 .search-result:hover{
-    background-color: #f5f5f5;
+    background-color: #dbdbdb;
 }
 .search-result img {
     width: 50px;
@@ -144,10 +167,20 @@ nav button {
     flex-shrink: 0;
 }
 
+.search-icon{
+    position: absolute;
+    right: 12px;
+    top: 30%;
+    pointer-events: none;
+}
+.search-icon img{
+    width: 16px;
+    height: 16px;
+}
 /*This is for bookdetail*/
 .book-detail-container{
     display: flex;
-    max-width: 900px;
+    max-width: 700px;
     margin: 40px auto;
     padding: 0 20px;
     gap: 40px;
@@ -177,4 +210,147 @@ nav button {
 .book-detail-info button:disabled{
     background-color: rgb(176, 176, 176);
     cursor: default;
+}
+
+
+/*Horizontal book feature css styling!*/
+
+.recommended-section {
+    background-color: #6b3f2a;
+    border-radius: 22px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.recommended-section h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.recommended-container{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.recommended-books{    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 16px; 
+    flex: 1;
+    overflow: hidden;
+}
+
+.recommended-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    flex: 1;
+}
+.recommended-card img{ 
+    width: 80px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.recommended-card p{
+    color: white;
+    font-size: .7rem;
+    text-align: center;
+}
+
+/*This is for the buttons in the scroll feature*/ 
+.scroll-btn{
+    display: flex;
+    background-color:#6b3f2a;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    width: 30px;
+    height: 150px;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.scroll-btn:hover{
+    background: rgba(139, 69, 19, 0.6);
+}
+
+/*This is for the login and register form*/
+.form-container{
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #6b3f2a;
+    border: 10px solid  #9d7664;
+    border-radius:22px;
+    font-size: 1rem;
+}
+
+.form-container h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.form-container input{
+    width: 100%;
+    padding: 14px 14px;
+    border: 1px solid #9e938e;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 1.3rem;
+}
+
+
+
+.form-container button{
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+    margin-top: 10px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container button:hover{
+    background-color: #8b8b8b;
+    color: white;
+}
+
+/*This is for the pages css where users can move forward and back*/
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top:32px;
+}
+.page-btn{
+    width: 36px;
+    height: 36px;
+    border: 3px solid #6b3f2a;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    font-size: large;
+}
+.page-btn:hover{
+    background-color: #9d7664;
+    color: white;
+}
+
+/*This signals the page we are on by the color of the ball*/
+.page-btn.active{
+    background-color: #9d7664;
+    color:white;
 }

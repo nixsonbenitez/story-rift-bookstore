@@ -20,7 +20,7 @@ export default function LoginPage(){
 
 
     return (
-        <div>
+        <div className="form-container">
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <input
