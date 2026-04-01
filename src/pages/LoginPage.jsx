@@ -9,7 +9,7 @@ export default function LoginPage(){
    const navigate = useNavigate();
    const { login: loginToContext} = useAuth();
    const[searchParams] = useSearchParams();
-   const from = searchParams.get("from") || "/account";
+   const from = searchParams.get("from") || "/account"; //this takes users to back to bookdetail id, incase they wanted to login and check out the book they originally was viewing//if they weren't viewing it takes the, to account
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -44,8 +44,6 @@ export default function LoginPage(){
 }
 
 //Hook notes for LoginPage();
-// for our four hooks, the two imporant things to note is that the email and password will be a string at the start when they are submitted.
+// for our 6 hooks, the two imporant things to note is that the email and password will be a string at the start when they are submitted.
 // we will have to Context-Text : application/json so our api recieves it as an object
 // our login: loginToContext is more for renaming as I can't confuse the imports.  
-
-//Notes for submit

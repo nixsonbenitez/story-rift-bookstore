@@ -35,7 +35,7 @@ export default function BooksPage(){
     const totalPages = Math.ceil(books.length / booksPerPage);
     const startIndex = (currentPage - 1) * booksPerPage;
     const currentBooks = books.slice(startIndex, startIndex + booksPerPage);
-    const firstHalf = currentBooks.slice(0,5); // this allows for the Books recommended function to be between the 5 and 10 books
+    const firstHalf = currentBooks.slice(0,5); // this allows for the Books recommended function to be between the 5 and 6 books
     const secondHalf = currentBooks.slice(5,10);
     
 
@@ -61,7 +61,8 @@ export default function BooksPage(){
                             <button className="scroll-btn" onClick={scrollLeft}>←</button> 
                         )}
                     <div className="recommended-books">
-                        {availableBooks.slice(scrollIndex, scrollIndex + 4).map((book) => ( // scroll index tracks which books we're starting from scrollLeft and right move the index up and down. //dot slife meants cut out a portion which makes it very useful in this, it takes two arguments and does a start and end. It takes a portion of an array without changing the original.
+                        {availableBooks.slice(scrollIndex, scrollIndex + 4).map((book) => ( // scroll index tracks which books we're starting from scrollLeft and right move the index up and down. 
+                        // //dot means cut out a portion which makes it very useful in this, it takes two arguments and does a start and end. It takes a portion of an array without changing the original.
                             <Link to ={`/books/${book.id}`} key={book.id} className="recommended-card"> 
                                 <img src={book.coverimage} alt={book.title}/>
                                 <p>{book.title}</p>
@@ -102,7 +103,7 @@ export default function BooksPage(){
 
 //Purpose: 
 // Here we are using useEffect with an empty [] as we don't have any books yet,
-// We are also calliong our api function and when the data comes back we store it in state.
+// We are also calling our api function and when the data comes back we store it in state.
 // Link's purpose is for each book card till need to be clickable. 
 // In our return statement as well, we are using map to add on the link effect for the frontend,
 // so each book id will have an img, title and author, all attributed to Link. Which is important

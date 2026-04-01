@@ -9,3 +9,5 @@ export default function NotFoundPage(){
         </div>
      )
 }
+
+//this is more for when things go off the rails

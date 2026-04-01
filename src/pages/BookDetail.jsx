@@ -33,7 +33,7 @@ export default function BookDetail(){
             <p>{book.description}</p>
 
             {!token ? (
-                <p className="RegandLog">Please <Link to={`/register?from=/books/${book/id}`}>register</Link> or <Link to={`/login?from=/books/${book.id}`}>login</Link> to reserve this book!</p>
+                <p className="RegandLog">Please <Link to={`/register?from=/books/${book.id}`}>register</Link> or <Link to={`/login?from=/books/${book.id}`}>login</Link> to reserve this book!</p> //the Link here and our back tics does something unique, it holds the id of the book last viewed like a note and once users are logged in, it takes them back to the id, that question mark keeps the information
             ) : book.available ? (
                 <button onClick={handleReserve}>Reserve</button>
             ) : (
@@ -45,14 +45,13 @@ export default function BookDetail(){
 }
 
 //BookDetail Notes: 
-// so we are calling the books detail and idea from the url which is why we are using 
+// so we are calling the books detail and id from the url which is why we are using 
 // useParams, to fetch it. UseEffect here is saying to load immidiently the id of the book once it appears in the 
 // params and set that data forward, as soon as an id shows up.
 
 //BookDetail return notes:
-//in our return we pull up the data from our api and show the said id when Book detail fores in our earlier part of our function.
 // If a token isn't shown there is an attribution and an encouraging message to have users register or login. Other wise the colon and question mark shows
-// a reserve buttn and already reserve buttn if a token is indeed present.  its a ternary inside of aq ternary. 
+// a reserve buttn and already reserve buttn if a token is indeed present.  its a ternary inside of a ternary. 
 
 // The nexter ternary is like saying if no token show register or user. If a book is available show a reserve, or disable it. 3 ternary! 
 
