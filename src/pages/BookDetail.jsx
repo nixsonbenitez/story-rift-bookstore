@@ -33,7 +33,7 @@ export default function BookDetail(){
             <p>{book.description}</p>
 
             {!token ? (
-                <p>Please <Link to="/register">register</Link> or <Link to="/login">login</Link> to reserve this book!</p>
+                <p className="RegandLog">Please <Link to={`/register?from=/books/${book/id}`}>register</Link> or <Link to={`/login?from=/books/${book.id}`}>login</Link> to reserve this book!</p>
             ) : book.available ? (
                 <button onClick={handleReserve}>Reserve</button>
             ) : (

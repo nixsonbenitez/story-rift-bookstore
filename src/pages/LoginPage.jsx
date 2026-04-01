@@ -1,5 +1,5 @@
 import {useState} from "react"
-import {useNavigate} from "react-router"
+import {useNavigate, useSearchParams} from "react-router"
 import {login} from "../api"
 import {useAuth} from "../context/AuthContext"
 
@@ -8,12 +8,14 @@ export default function LoginPage(){
    const[password, setPassword] = useState("");
    const navigate = useNavigate();
    const { login: loginToContext} = useAuth();
+   const[searchParams] = useSearchParams();
+   const from = searchParams.get("from") || "/account";
 
     async function handleSubmit(e){
         e.preventDefault();
         const data = await login({email, password});
         loginToContext(data.token);
-        navigate("/account"); //navigate fires and sends user to the account page.
+        navigate(from); //navigate fires and sends user to the account page.
     }
     // Handle submit sends the credentials to get the token back
     //token is saved in AuthContext from data.token

@@ -1,5 +1,5 @@
 import {useState} from "react"
-import {useNavigate} from "react-router-dom"
+import {useNavigate, useSearchParams} from "react-router-dom"
 import {register} from "../api"
 import {useAuth} from "../context/AuthContext"
 
@@ -8,6 +8,8 @@ import {useAuth} from "../context/AuthContext"
 export default function RegisterPage(){
     const[firstName, setFirstName] = useState("") // always remember this is from reatc
     const[lastName, setLastName] = useState("")
+    const[searchParams] =useSearchParams();
+    const from = searchParams.get("from") || "/account";
     const[email, setEmail] = useState("")
     const[password, setPassword] = useState("")
     const navigate = useNavigate(); // this is always going to be react-router-dom
@@ -19,7 +21,7 @@ export default function RegisterPage(){
         e.preventDefault();
         const data = await register({firstName, lastName, email, password});
         loginToContext(data.token);
-        navigate("/account"); 
+        navigate(from); 
     }
 
     //handlesubmit neeeds to be here to act on the form submision and to send the register data to our API

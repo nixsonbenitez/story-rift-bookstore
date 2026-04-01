@@ -29,7 +29,7 @@ body {
     padding: 16px;
     margin-bottom: 16px;
     background: white;
-    border: 1px solid #ddd;
+    border: 1px solid #c2a79b;
     border-radius: 6px;
     text-decoration: none;
     color: #333;
@@ -353,4 +353,158 @@ nav button:hover{
 .page-btn.active{
     background-color: #9d7664;
     color:white;
+}
+
+/*This is css for account page*/
+
+.account-container{
+    max-width:700px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.account-profile{
+    background-color: white;
+    border: 2px solid #9d7664;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 32px;
+}
+
+.account-profile h1{
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.account-profile p{
+    font-size: 1rem;
+    color: #444;
+}
+
+.account-reservations h2 {
+    margin-bottom: 16px;
+}
+
+.reservation-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ac9287;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.reservation-card p{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.reservation-card button{
+    padding: 8px 20px;
+    background-color: #6b3f2a;
+    border: none;
+    color: white;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.reservation-card button:hover{
+    background-color: #81604f;
+    color: white;
+    border: none;
+}
+
+/*incase someone types in account it will take them to a book*/
+.account-container-2{
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.account-auth-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.account-auth-links a{
+    padding: 10px 24px;
+    margin-right: 10px;
+    background-color: #6b3f2a;
+    color: white;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.95rem
+}
+.account-auth-links a:hover{
+    background-color: #81604f;
+}
+
+.book{
+    width: 90px;
+}
+
+/*404 css*/
+.not-found-container{
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.not-found-container h1{
+    font-size: 6rem;
+    color:#6b3f2a;
+}
+
+.not-found-container{
+    font-size: 1.2rem;
+    color: #000000;
+}
+.not-found-container p{
+    margin-bottom: 20px;
+}
+.not-found-container a{
+    padding: 10px 20px;
+    background-color: #6b3f2a;
+    color: white;
+    text-decoration: none;
+    border: 999px;
+    border-radius: 999px;
+}
+.not-found-container a:hover{
+    background-color: #00ff7b;
+    color: black;
+}
+.img404{
+    width: 150px;
+}
+
+.RegandLog{
+    background-color: #6b3f2a;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 999px;;
+    margin-top: 14px;
+}
+.RegandLog a{
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 7px;
+    border-radius: 999px;
+}
+
+.RegandLog a:hover{
+    background-color: #6b3f2a;
+    color: white;
+    border: 2px solid white;
 }
